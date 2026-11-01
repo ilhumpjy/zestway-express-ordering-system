@@ -1,0 +1,233 @@
+:root {
+  --a: 40px;       /* a: space between columns */
+  --b: 16px;       /* b: padding inside each dish card */
+  --c: 24px;       /* c: vertical spacing between rows */
+  --d: 1200px;     /* d: total width of the layout */
+
+  --card-radius: 12px;
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --highlight: #007BFF;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: var(--d);
+  margin: auto;
+  padding: 20px;
+}
+
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.dishes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  column-gap: var(--a); /* horizontal spacing between cards */
+  row-gap: var(--c);    /* vertical spacing between rows */
+}
+
+.dish-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--b);  /* use variable b */
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+
+.dish-card:hover {
+  transform: translateY(-5px);
+}
+
+.dish-card img {
+  width: 100%;
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.options {
+  margin-top: 10px;
+  border-top: 1px dashed #ccc;
+  padding-top: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 10px;
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.option-item img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.option-item span {
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty-controls button {
+  padding: 6px 12px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.qty-controls .remove {
+  background-color: #dc3545;
+}
+
+.qty-controls .select {
+  background-color: #28a745;
+}
+
+.order {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+#orderList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+#orderList li {
+  padding: 4px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.select-btn {
+  background-color: #28a745 !important; /* Green */
+  color: white;
+}
+
+.remove-btn {
+  background-color: #dc3545 !important; /* Red */
+  color: white;
+}
+
+.disabled-btn {
+  background-color: #ccc !important;
+  color: #777 !important;
+  cursor: not-allowed;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.option-item img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.option-item span {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+/* Modern checkbox style */
+.option-item input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.option-item input[type="checkbox"]:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.option-item input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+.option-item input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+.confirm-btn {
+  float: right;
+  margin-top: 10px;
+  background-color: #20933b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+

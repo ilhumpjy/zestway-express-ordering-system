@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zestway</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Zestway</h1>
+
+    <div class="menu">
+      <h2>Build Your Meal</h2>
+      <div class="dishes">
+
+        <!-- STEP 1: Bread -->
+        <div class="dish-card">
+          <h3>Step 1: Choose your bread</h3>
+          <img src="pictures/bread/bread.webp" alt="Bread Image" title="Choose your bread" onclick="toggleOptions('bread-options')">
+          <div id="bread-options" class="options hidden">
+            <div class="option-item">
+              <img src="pictures/bread/White.jpg" alt="White Bread">
+              <span>White Bread</span>
+              <div class="qty-controls">
+                <button class="btn-bread select-btn" data-name="White Bread" onclick="handleSelect('bread', 'White Bread')">Select</button>
+                <span id="qty-White Bread">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/bread/Wheat.jpg" alt="Whole Wheat Bread">
+              <span>Whole Wheat</span>
+              <div class="qty-controls">
+                <button class="btn-bread select-btn" data-name="Whole Wheat" onclick="handleSelect('bread', 'Whole Wheat')">Select</button>
+                <span id="qty-Whole Wheat">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/bread/HoneyOat.jpg" alt="Honey Oat Bread">
+              <span>Honey Oat</span>
+              <div class="qty-controls">
+                <button class="btn-bread select-btn" data-name="Honey Oat" onclick="handleSelect('bread', 'Honey Oat')">Select</button>
+                <span id="qty-Honey Oat">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/bread/ParmesanOregano.jpg" alt="Parmesan Oregano Bread">
+              <span>Parmesan</span>
+              <div class="qty-controls">
+                <button class="btn-bread select-btn" data-name="Parmesan" onclick="handleSelect('bread', 'Parmesan')">Select</button>
+                <span id="qty-Parmesan">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Menu -->
+        <div class="dish-card">
+          <h3>Step 2: Choose your proteins</h3>
+          <img src="pictures/menu/Protein.webp" alt="Choose a protein" onclick="toggleOptions('menu-options')">
+          <div id="menu-options" class="options hidden">
+            <div class="option-item">
+              <img src="pictures/menu/roastedChicken.png" alt="Roasted Chicken">
+              <span>Roasted Chicken - RM7</span>
+              <div class="qty-controls">
+                <button class="btn-menu select-btn" data-name="Roasted Chicken" onclick="handleSelect('menu', 'Roasted Chicken', 7)">Select</button>
+                <span id="qty-Roasted Chicken">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/menu/RoastBeef.png" alt="Roasted Beef">
+              <span>Roasted Beef - RM8</span>
+              <div class="qty-controls">
+                <button class="btn-menu select-btn" data-name="Roasted Beef" onclick="handleSelect('menu', 'Roasted Beef', 8)">Select</button>
+                <span id="qty-Roasted Beef">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/menu/Teriyaki.png" alt="Teriyaki Chicken">
+              <span>Teriyaki Chicken - RM6</span>
+              <div class="qty-controls">
+                <button class="btn-menu select-btn" data-name="Teriyaki Chicken" onclick="handleSelect('menu', 'Teriyaki Chicken', 6)">Select</button>
+                <span id="qty-Teriyaki Chicken">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/menu/B.M.T.png" alt="Italian B.M.T">
+              <span>Italian B.M.T - RM6</span>
+              <div class="qty-controls">
+                <button class="btn-menu select-btn" data-name="Italian B.M.T" onclick="handleSelect('menu', 'Italian B.M.T', 6)">Select</button>
+                <span id="qty-Italian B.M.T">0</span>
+              </div>
+            </div>
+            <div class="option-item">
+              <img src="pictures/menu/SteakCheese.png" alt="Steak & Cheese">
+              <span>Steak & Cheese - RM6</span>
+              <div class="qty-controls">
+                <button class="btn-menu select-btn" data-name="Steak & Cheese" onclick="handleSelect('menu', 'Steak & Cheese', 6)">Select</button>
+                <span id="qty-Steak & Cheese">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Veggies -->
+        <div class="dish-card">
+          <h3>Step 3: Choose your veggies</h3>
+          <img src="pictures/veggies/Veggies.webp" alt="Veggie Options" onclick="toggleOptions('veggie-options')">
+          <div id="veggie-options" class="options hidden">
+            <div class="option-item">
+              <img src="pictures/veggies/Lettuce.png" alt="Lettuce">
+              <span>Lettuce - RM1</span>
+              <input type="checkbox" id="lettuce" title="Lettuce" onchange="toggleCheckbox('lettuce', 1, this.checked)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/veggies/Tomatoes.png" alt="Tomato">
+              <span>Tomato - RM1</span>
+              <input type="checkbox" id="tomato" title="Onion" onchange="toggleCheckbox('tomato', 1, this.checked)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/veggies/Cucumbers.png" alt="Cucumber">
+              <span>Cucumber - RM1</span>
+              <input type="checkbox" id="cucumber" title="Cucumber" onchange="toggleCheckbox('cucumber', 1, this.checked)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/veggies/Onions.jpg" alt="Onions">
+              <span>Onions - RM1</span>
+              <input type="checkbox" id="onion" title="Onion" onchange="toggleCheckbox('onion', 1, this.checked)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/veggies/Cheese.jpg" alt="Cheese">
+              <span>Cheese - RM1</span>
+              <input type="checkbox" id="cheese" title="Cheese" toggleCheckbox('cheese', 1, this.checked)">
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Sauces -->
+        <div class="dish-card">
+          <h3>Step 4: Pick up to 4 sauces</h3>
+          <img src="pictures/sauce/Sauce.webp" alt="Sauce Options" onclick="toggleOptions('sauce-options')">
+          <div id="sauce-options" class="options hidden">
+            <div class="option-item">
+              <img src="pictures/sauce/Mayonnaise.png" alt="Mayonnaise">
+              <span>Mayonnaise - RM0.5</span>
+              <input type="checkbox" id="sauce-mayo" title="Mayonnaise" class="sauce-checkbox" onchange="toggleSauce('Mayonnaise', 0.5, this)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/sauce/ChipotleSouthwest.png" alt="Chipotle Southwest">
+              <span>Chipotle Southwest - RM0.5</span>
+              <input type="checkbox" id="sauce-ChipotleSouthwest" title="Chipotle Southwest" class="sauce-checkbox" onchange="toggleSauce('ChipotleSouthwest', 0.5, this)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/sauce/HoneyMustard.png" alt="Honey Mustard">
+              <span>Honey Mustard - RM0.5</span>
+              <input type="checkbox" id="sauce-HoneyMustard" title="Honey Mustard" class="sauce-checkbox" onchange="toggleSauce('HoneyMustard', 0.5, this)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/sauce/SweetOnion.png" alt="Sweet Onion">
+              <span>Sweet Onion - RM0.5</span>
+              <input type="checkbox" id="sauce-SweetOnion" title="Sweet Onion" class="sauce-checkbox" onchange="toggleSauce('SweetOnion', 0.5, this)">
+            </div>
+            <div class="option-item">
+              <img src="pictures/sauce/ThousandIsland.png" alt="Thousand Island">
+              <span>Thousand Island - RM0.5</span>
+              <input type="checkbox" id="sauce-ThousandIsland" title="Thousand Island" class="sauce-checkbox" onchange="toggleSauce('ThousandIsland', 0.5, this)">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="order">
+      <h2>Your Order</h2>
+      <ul id="orderList"></ul>
+      <p><strong>Total:</strong> RM<span id="totalPrice">0</span></p>
+      <button class="confirm-btn" onclick="confirmOrder()">Submit Order</button>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
